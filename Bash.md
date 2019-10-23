@@ -846,7 +846,7 @@ ftp
 
 
 
-### 1. nohup
+### nohup
 
 ```shell
 # quit
@@ -871,7 +871,7 @@ nohup ping google.com &
 disown  -h  %1
 ```
 
-### 2. Screen
+### Screen
 
 ```shell
 sudo apt-get install screen
@@ -1021,7 +1021,7 @@ new-window -n processes "top"`。 # 创建新窗口并执行命令
 
 
 
-### 3. Slurm
+### Slurm
 
 ```R
 # Useful links
@@ -1086,6 +1086,10 @@ bwa mem -t 12 -M /home/u2793/_scratch/reference/index/bwa/hg19/bwa SHCHVD2604201
 # Github
 
 ```shell
+# 生成ssh key
+ssh-keygen -t rsa -C "gjliu0325@gmail.com"
+然后设置密码，我设置了，跟github账户差不多。最后少一个符号。
+# help
 which git
 git --help
 git status
