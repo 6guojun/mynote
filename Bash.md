@@ -1099,6 +1099,16 @@ git remote show origin
 echo "# Bash" >> README.md
 git init
 git add README.md
+# 本地向远程github仓库提交文件(分三步)
+1. 向本地stage增加文件,点号可以换成具体文件的名称（支持文件夹、通配符等）
+git add . 
+如果想撤销,使用git reset .（点号可以换成具体文件的名称（支持文件夹、通配符等））
+或者使用git rm --cached <added_file_to_undo>
+2. 向本地repos提交
+git commit -m "提交日志"
+3. 向远程github提交
+git push -u origin master
+如果本地某些文件不是最新的，可能需要先执行git pull更新一下（可能有冲突，需要自己手动合并一下，并填写合并日志）
 # commit 
 git commit
 git commit -m "first commit"
