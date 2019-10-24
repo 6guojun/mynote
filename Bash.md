@@ -702,6 +702,29 @@ d1G     删除当前位置到工作缓存区开始的内容
 1. Ctrl + V
 x or d (如果是“//”注释，那需要执行两次该操作，如果是“#”注释，一次即可)
 2. dd (删除光标所在的行)
+# COPY (执行该操作首先需要进入视觉模式及ctrl+v, yank(提起))
+yy复制游标所在行整行。或大写一个Y。
+2yy或y2y复制两行.
+y^复制至行首，或y0。不含游标所在处字元。
+y$复制至行尾。含游标所在处字元。
+yw复制一个word。
+y2w复制两个字（单词）。
+yG复制至档尾。
+y1G复制至档首。
+# CUT
+Ctrl+v +dd
+# PASTE
+p or P
+# search (n or N -> next or previous)
+1. 光标停留在想要查找的单词的任意一个字母上面， 然后输入Shift + *
+2. yw拷贝该单词， 然后输入 / (Ctrl + R) 0 （即 /”0）
+3. / or ? 
+# highlight search
+Shift+*
+set hlsearch
+nohlsearch
+# line number
+set number
 ```
 
 #  Emacs
@@ -977,8 +1000,6 @@ tmux kill-session -a -t mysession (kill all sessions but mysession)
 tmux display-message -p '#S'
 # split Panel
 Ctrl+b c Create a new window (with shell)
-Ctrl+b w Choose window from a list
-Ctrl+b 0 Switch to window 0 (by number )
 Ctrl+b , Rename the current window
 Ctrl+b % Split current pane horizontally into two panes
 Ctrl+b " Split current pane vertically into two panes
@@ -1006,8 +1027,9 @@ Ctrl+b ,
 Ctrl+b n
 Ctrl+b p
 Ctrl+b <num>  (切换到某个编号的窗口)
+Ctrl+b 0 Switch to window 0 (by number )
 Ctrl+b f # 如果窗口数量超过 9 个，通过窗口名称查找（f=find）
-Ctrl+b w # 如果窗口数量超过 9 个，通过窗口列表查找（w=window）
+Ctrl+b w # Choose window from a list 如果窗口数量超过 9 个，通过窗口列表查找（w=window）
 Ctrl+b l 在相邻的两个window里切换
 # 关闭一个窗口
 exit 或者 prefix &
