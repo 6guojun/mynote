@@ -1125,19 +1125,18 @@ git add README.md
 ########
 # 本地向远程github仓库提交文件(分三步)
 1. git add Bash.md 
-# 如果想撤销,使用
-git reset Bash.md（点号可以换成具体文件的名称（支持文件夹、通配符等））
-或者使用git rm --cached <added_file_to_undo>
-2. 向本地repos提交
-git commit -m "提交日志"
-3. 向远程github提交
-git push -u origin master
-如果本地某些文件不是最新的，可能需要先执行git pull更新一下（可能有冲突，需要自己手动合并一下，并填写合并日志）
-# 同步到本地
+2. git commit -m Bash.md
+3. git push -u origin master
+# 或则
+git add Bash.md && git commit -m Bash.md && git push -u origin master
+# 如果本地某些文件不是最新的，可能需要先执行来同步到本地
 git pull
 # commit 
 git commit
 git commit -m "first commit"
+# 如果想撤销,使用
+git reset Bash.md（点号可以换成具体文件的名称（支持文件夹、通配符等））
+或者使用git rm --cached <added_file_to_undo>
 # create a new repository on the command line
 echo "# mynote" >> README.md
 git init
