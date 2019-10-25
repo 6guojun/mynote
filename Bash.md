@@ -762,6 +762,7 @@ vim test.cpp
 touch test.cpp
 // compile 
 g++ test.cpp
+g++ -pipe -02 -std=c++11 ./test.cpp
 // check version
 g++ -v
 // commonts
@@ -1121,16 +1122,19 @@ git remote show origin
 echo "# Bash" >> README.md
 git init
 git add README.md
+########
 # 本地向远程github仓库提交文件(分三步)
-1. 向本地stage增加文件,点号可以换成具体文件的名称（支持文件夹、通配符等）
-git add . 
-如果想撤销,使用git reset .（点号可以换成具体文件的名称（支持文件夹、通配符等））
+1. git add Bash.md 
+# 如果想撤销,使用
+git reset Bash.md（点号可以换成具体文件的名称（支持文件夹、通配符等））
 或者使用git rm --cached <added_file_to_undo>
 2. 向本地repos提交
 git commit -m "提交日志"
 3. 向远程github提交
 git push -u origin master
 如果本地某些文件不是最新的，可能需要先执行git pull更新一下（可能有冲突，需要自己手动合并一下，并填写合并日志）
+# 同步到本地
+git pull
 # commit 
 git commit
 git commit -m "first commit"
@@ -1141,7 +1145,9 @@ git add README.md
 git commit -m "first commit"
 git remote add origin git@github.com:6guojun/mynote.git
 git push -u origin master
+#######
 # push an existing repository
+#######
 git remote add origin https://github.com/guojun-liu/Bash.git
 git remote add origin git@github.com:6guojun/mynote.git
 git push -u origin master
@@ -1164,15 +1170,14 @@ git merge origin/master
 git remote -v
 #
 ssh-keygen -t rsa -C
-ssh -T git@github.comgit config --global user.email "jmzeng1314@163.com"
+ssh -T git@github.comgit config --global user.email "gjliu0325@gmail.com"
 # 把所有文件加入到索引（不想把所有文件加入，可以用gitignore或add 具体文件)
 git add - this stages your changes for committing
 git add -A
 git commit - this commits your staged changes locally
 git push - this pushes your committed changes to a remotegit pullgit status
 # 创建一个新的分支
-git checkout -b newBrach origin/mastergit log
-git pull 
+git checkout -b newBrach origin/mastergit log 
 # cancel
 git reset
 # delete
